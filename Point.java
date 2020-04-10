@@ -1,6 +1,7 @@
 class Point {
 	String id
 	double x,y;
+	Stirng color;
 
 	//TODO add new variable
 
