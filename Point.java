@@ -1,13 +1,12 @@
 class Point {
 	String id
-	double x,y;
-
+	double x, y;
 
 	//TODO add new variable
-	Stirng color;
+	String color;
 
 	//TODO constructor
-	public Point(String id, double x, double y, Stirng color) {
+	public Point(String id, double x, double y, String color) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
@@ -39,31 +38,34 @@ class Point {
 		this.y = y;
 	}
 
-	public Stirng getColor() {
+	public String getColor() {
 		return color;
 	}
 
-	public void setColor(Stirng color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 
-	public void move (char xDirection, char yDirection) {
+	public void move(char xDirection, char yDirection) {
 		//TODO
-		if(xDirection=='R')
+		if (Character.toString(xDirection).matches("L")) {
+			this.x--;
+		}
+		if (Character.toString(xDirection).matches("R")) {
 			this.x++;
-		else if(xDirection=="L")
-			this.x++;
-		if(yDirection=="U")
+		}
+		if (Character.toString(yDirection).matches("U")) {
 			this.y++;
-		else if(yDirection=="D")
-			this.y++;
+		}
+		if (Character.toString(yDirection).matches("D")) {
+			this.y--;
+		}
 	}
 
-	public void draw () {
+	public void draw() {
 		//TODO
-		System.out.println("(" + this.x + "," + this.y  + ")");
+		System.out.println(("(" + this.x + "," + this.y + ")"));
 	}
-
 
 
 }
